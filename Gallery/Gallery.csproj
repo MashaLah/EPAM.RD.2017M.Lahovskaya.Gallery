@@ -44,6 +44,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -124,17 +152,94 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\gallery.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\-ELcgngZ2Yo.jpg" />
+    <Content Include="Content\images\0CKhb0ul_uE.jpg" />
+    <Content Include="Content\images\0iDtWq1rbNg.jpg" />
+    <Content Include="Content\images\0J52YD-O520.jpg" />
+    <Content Include="Content\images\1Bp8dRzANiw.jpg" />
+    <Content Include="Content\images\4pQmjTiEOLI.jpg" />
+    <Content Include="Content\images\5C-spO4h9Gw.jpg" />
+    <Content Include="Content\images\7B-n1OfAZSY.jpg" />
+    <Content Include="Content\images\85YAotZcejY.jpg" />
+    <Content Include="Content\images\8coKI6eyLiU.jpg" />
+    <Content Include="Content\images\aNZYHYUrLNw.jpg" />
+    <Content Include="Content\images\aohoAtwrU9g.jpg" />
+    <Content Include="Content\images\BosNHLmOLTs.jpg" />
+    <Content Include="Content\images\BYeazGHFo7A.jpg" />
+    <Content Include="Content\images\c0eZxeHREcs.jpg" />
+    <Content Include="Content\images\C1zzfP0cf1s.jpg" />
+    <Content Include="Content\images\cklgk0W_ckI.jpg" />
+    <Content Include="Content\images\DbuDiDy2VZc.jpg" />
+    <Content Include="Content\images\DNBN_03i864.jpg" />
+    <Content Include="Content\images\E2i-BPVPgEw.jpg" />
+    <Content Include="Content\images\exFJSSnXh38.jpg" />
+    <Content Include="Content\images\FaRZ7bTxxdM.jpg" />
+    <Content Include="Content\images\ge8V_lZKvGQ.jpg" />
+    <Content Include="Content\images\GjEwZ_jEBXM.jpg" />
+    <Content Include="Content\images\GyPh3ZU0Hbw.jpg" />
+    <Content Include="Content\images\HaCyD0yw4ak.jpg" />
+    <Content Include="Content\images\hagK3upiyeY.jpg" />
+    <Content Include="Content\images\HhLpn0uGlLc.jpg" />
+    <Content Include="Content\images\iRrcUc79C3g.jpg" />
+    <Content Include="Content\images\IxuE_StIqc8.jpg" />
+    <Content Include="Content\images\k5PWjbiQwpw.jpg" />
+    <Content Include="Content\images\KLaZ59nP03g.jpg" />
+    <Content Include="Content\images\Kq8jZkdyFQk.jpg" />
+    <Content Include="Content\images\L2_csUU6MwI.jpg" />
+    <Content Include="Content\images\L78D6GUHs6s.jpg" />
+    <Content Include="Content\images\NoypOSc7pbM.jpg" />
+    <Content Include="Content\images\O6oyLZgaQGk.jpg" />
+    <Content Include="Content\images\ODfIKNCsDdY.jpg" />
+    <Content Include="Content\images\PnLH3ehi9t8.jpg" />
+    <Content Include="Content\images\ppSmd6ezyE4.jpg" />
+    <Content Include="Content\images\QRLvcjG5DbM.jpg" />
+    <Content Include="Content\images\QsJOqMSYhZ4.jpg" />
+    <Content Include="Content\images\R-b1cv_ly5Y.jpg" />
+    <Content Include="Content\images\rPsFB4efNsc.jpg" />
+    <Content Include="Content\images\rulBXf5uJek.jpg" />
+    <Content Include="Content\images\sIi2Xui0PlA.jpg" />
+    <Content Include="Content\images\tJt32m3ZMPQ.jpg" />
+    <Content Include="Content\images\TMTK29p9hfo.jpg" />
+    <Content Include="Content\images\tSKBlF9pcN0.jpg" />
+    <Content Include="Content\images\TvPsqP_32UE.jpg" />
+    <Content Include="Content\images\TwmbrLJ9xys.jpg" />
+    <Content Include="Content\images\U66mmom38I0.jpg" />
+    <Content Include="Content\images\Ugj8k89N8Xo.jpg" />
+    <Content Include="Content\images\UJzhUpzGD6c.jpg" />
+    <Content Include="Content\images\Um5UC2baMVs.jpg" />
+    <Content Include="Content\images\uwuci2vEJXQ.jpg" />
+    <Content Include="Content\images\vFLSlb0hbus.jpg" />
+    <Content Include="Content\images\vxFLn8Ruhuc.jpg" />
+    <Content Include="Content\images\xfItk4RHy-4.jpg" />
+    <Content Include="Content\images\Xiy70O1sEoY.jpg" />
+    <Content Include="Content\images\Y4tyjWAdP9E.jpg" />
+    <Content Include="Content\images\YF7fZyfsq0s.jpg" />
+    <Content Include="Content\images\ym_cMFP_nfQ.jpg" />
+    <Content Include="Content\images\YV_1Fs6uEvM.jpg" />
+    <Content Include="Content\images\ZIEp9uXo4gw.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -144,6 +249,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\module.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -158,13 +264,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Angular\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
