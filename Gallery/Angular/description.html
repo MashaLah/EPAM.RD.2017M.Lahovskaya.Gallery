@@ -1,0 +1,9 @@
+﻿<div class="container">
+    <br>
+    <p ng-show="!isEdit">
+        {{text}}
+    </p>
+    <textarea ng-show="isEdit" ng-model="text" class="form-control"></textarea>
+    <input type="button" value="goEdit" ng-click="goEdit()" class="btn btn-default" />
+    <input type="button" value="applyEdit" ng-click="applyEdit()" class="btn btn-default" />
+</div>

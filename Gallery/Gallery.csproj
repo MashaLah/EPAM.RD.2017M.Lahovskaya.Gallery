@@ -156,6 +156,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\description.html" />
+    <Content Include="Angular\picture.html" />
     <Content Include="Angular\gallery.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -165,7 +167,6 @@
     <Content Include="Content\images\0J52YD-O520.jpg" />
     <Content Include="Content\images\1Bp8dRzANiw.jpg" />
     <Content Include="Content\images\4pQmjTiEOLI.jpg" />
-    <Content Include="Content\images\5C-spO4h9Gw.jpg" />
     <Content Include="Content\images\7B-n1OfAZSY.jpg" />
     <Content Include="Content\images\85YAotZcejY.jpg" />
     <Content Include="Content\images\8coKI6eyLiU.jpg" />
@@ -224,6 +225,7 @@
     <Content Include="Content\images\ym_cMFP_nfQ.jpg" />
     <Content Include="Content\images\YV_1Fs6uEvM.jpg" />
     <Content Include="Content\images\ZIEp9uXo4gw.jpg" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -231,6 +233,10 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -265,7 +271,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Angular\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

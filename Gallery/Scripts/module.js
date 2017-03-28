@@ -1,27 +1,43 @@
-﻿angular.module('gallery', ['ngRoute'])
+﻿angular.module('gallery', ['ngRoute', 'ui.bootstrap'])
 .config([
 '$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $routeProvider
-               /* admin */
                .when('/Angular/gallery', {
                    templateUrl: '/Angular/gallery.html',
                    controller: 'GalleryController'
                })
+        .when('/Angular/description', {
+            templateUrl: '/Angular/description.html',
+            controller: 'DescriptionController'
+        })
                .otherwise({
                    redirectTo: '/Angular/gallery'
                });
-    // Uses HTLM5 history API for navigation
+
     $locationProvider.html5Mode(true);
 }
 ])
-.controller('GalleryController', ['$scope', 'dataCenter', function ($scope, dataCenter) {
+.controller('GalleryController', ['$scope', 'dataCenter', '$window', '$document', function ($scope, dataCenter, $window, $document) {
 
     var defered = dataCenter.getAll();
     defered.then(function (response) {
         $scope.guitars = response.data;
     });
-
 }])
+
+    .controller('DescriptionController', ['$scope', function ($scope) {
+        $scope.text = "This is gallery.";
+        $scope.isEdit = false;
+
+        $scope.goEdit = function () {
+            $scope.isEdit = true;
+        }
+
+        $scope.applyEdit = function () {
+            $scope.isEdit = false;
+        }
+    }])
+
 .service('dataCenter', ['$http', function ($http) {
     return {
         getAll: getAll,

@@ -4,13 +4,26 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="~/Scripts/module.js"></script>
 </head>
 <body>
     <h1>Angular main page</h1>
-    <a href="/Angular/home">homePage</a> | <a href="/Angular/gallery">gallery</a> | <a href="/Angular/addImg">addImg</a>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Menu
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="/Angular/gallery">Gallery</a></li>
+            <li><a href="/Angular/description">Description</a></li>
+        </ul>
+    </div>
     <div ng-view>Loading...</div>
 </body>
 </html>

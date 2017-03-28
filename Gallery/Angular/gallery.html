@@ -1,7 +1,12 @@
-﻿<div>
+﻿<div id="pictureGallery">
+    <br>
     <div ng-repeat="img in guitars track by $index">
-        <span>{{img.Name}}</span>
-        <img ng-src="{{img.Url}}" />
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" style="height:300px">
+                <img ng-src="{{img.Url}}" style="height:100%"/>
+            </div>
+            <span>{{img.Name}}</span>
+        </div>
     </div>
 </div>
 
