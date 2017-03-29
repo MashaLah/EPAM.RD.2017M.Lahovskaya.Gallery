@@ -1,4 +1,4 @@
-﻿angular.module('gallery', ['ngRoute', 'ui.bootstrap'])
+﻿angular.module('gallery', ['ngRoute'])
 .config([
 '$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $routeProvider
@@ -10,6 +10,7 @@
             templateUrl: '/Angular/description.html',
             controller: 'DescriptionController'
         })
+
                .otherwise({
                    redirectTo: '/Angular/gallery'
                });
@@ -17,7 +18,7 @@
     $locationProvider.html5Mode(true);
 }
 ])
-.controller('GalleryController', ['$scope', 'dataCenter', '$window', '$document', function ($scope, dataCenter, $window, $document) {
+.controller('GalleryController', ['$scope', 'dataCenter', function ($scope, dataCenter) {
 
     var defered = dataCenter.getAll();
     defered.then(function (response) {
@@ -40,12 +41,13 @@
 
 .service('dataCenter', ['$http', function ($http) {
     return {
-        getAll: getAll,
+        getAll: getAll
     };
 
     function getAll() {
-        return $http({
+        return $http.get("/Home/GetImages");/*({
             url: 'http://localhost:49390/Home/GetImages'
-        });
+        });*/
     }
+
 }])
