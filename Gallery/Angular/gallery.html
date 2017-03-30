@@ -3,9 +3,12 @@
     <div ng-repeat="img in pictures track by $index">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail" style="height:300px">
-                <img ng-src="{{img.Url}}" style="height:100%"/>
+                <img ng-src="{{img.Url}}" style="height:100%" ng-click="expand()"/>
             </div>
             <span>{{img.Name}}</span>
+        </div>
+        <div ng-show="isExpanded">
+            <img ng-src="{{img.Url}}" />
         </div>
     </div>
 </div>

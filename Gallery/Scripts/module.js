@@ -2,9 +2,9 @@
 .config([
 '$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $routeProvider
-               .when('/Angular/gallery', {
-                   templateUrl: '/Angular/gallery.html',
-                   controller: 'GalleryController'
+       .when('/Angular/gallery', {
+            templateUrl: '/Angular/gallery.html',
+            controller: 'GalleryController'
                })
         .when('/Angular/description', {
             templateUrl: '/Angular/description.html',
@@ -15,13 +15,14 @@
              controller: 'GalleryController'
          })
 
-               .otherwise({
-                   redirectTo: '/Angular/gallery'
-               });
+         .otherwise({
+             redirectTo: '/Angular/gallery'
+          });
 
     $locationProvider.html5Mode(true);
 }
 ])
+
 .controller('GalleryController', ['$scope', 'dataCenter', function ($scope, dataCenter) {
 
     $scope.NewImage = { 
@@ -64,6 +65,18 @@
             $scope.isEdit = false;
         }
     }])
+
+        .controller('PictureController', ['$scope', function ($scope) {
+
+            $scope.isExpanded = false;
+
+            $scope.expand = function () {
+                if ($scope.isExpanded == false)
+                $scope.isExpanded = true;
+            else $scope.isExpanded = false;
+            }
+
+        }])
 
 .service('dataCenter', ['$http', function ($http) {
     return {
