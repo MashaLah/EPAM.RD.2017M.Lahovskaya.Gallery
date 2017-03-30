@@ -17,7 +17,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="50" />
           <Property Name="ImageMimeType" Type="varchar" MaxLength="50" />
           <Property Name="Date" Type="datetime" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
@@ -61,7 +61,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -80,7 +80,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="GalleryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GalleryEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Albums" EntityType="Self.Album" />
           <EntitySet Name="Pictures" EntityType="Self.Picture" />
           <AssociationSet Name="FK_Pictures_Albums" Association="Self.FK_Pictures_Albums">
@@ -93,7 +93,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GalleryModelStoreContainer" CdmEntityContainer="GalleryEntities">
+        <EntityContainerMapping StorageEntityContainer="GalleryModelStoreContainer" CdmEntityContainer="GalleryEntities1">
           <EntitySetMapping Name="Albums">
             <EntityTypeMapping TypeName="GalleryModel.Album">
               <MappingFragment StoreEntitySet="Albums">
@@ -106,7 +106,7 @@
             <EntityTypeMapping TypeName="GalleryModel.Picture">
               <MappingFragment StoreEntitySet="Pictures">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="ImageMimeType" ColumnName="ImageMimeType" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

@@ -15,7 +15,7 @@ namespace Gallery.ORM
     public partial class Picture
     {
         public int Id { get; set; }
-        public byte[] Image { get; set; }
+        public string ImagePath { get; set; }
         public string ImageMimeType { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Name { get; set; }

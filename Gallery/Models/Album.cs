@@ -5,13 +5,9 @@ using System.Web;
 
 namespace Gallery.Models
 {
-    public class Image
+    public class Album
     {
         public int Id { get; set; }
-        public string Url { get; set; }
         public string Name { get; set; }
-        public string Extension { get; set; }
-        public DateTime? Date { get; set; }
-        public int? AlbumId { get; set; }
     }
 }

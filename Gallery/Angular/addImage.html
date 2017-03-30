@@ -1,11 +1,14 @@
 ﻿<div>
-    <h2>Add img</h2>
     <p>
-        name <input id="name" ng-model="img.name" />
+        Name <input id="name" class="form-control" ng-model="NewImage.Title" />
     </p>
     <p>
-        file <input type="file" fileread="img.data" />
+        Album <select class="form-control" ng-model="NewImage.AlbumId">
+            <option class="form-control" ng-repeat="option in albums" value="{{option.Id}}">{{option.Name}}</option>
+        </select>
     </p>
-    <input type="button" value="add" ng-click="addImg()" />
+    <p>
+        <input type="file" class="btn btn-default" fileread="NewImage.Src" />
+    </p>
+    <button ng-click="SaveImage()" class="btn btn-default">Save image</button>
 </div>
-

@@ -13,10 +13,10 @@ namespace Gallery.ORM
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GalleryEntities : DbContext
+    public partial class GalleryEntities1 : DbContext
     {
-        public GalleryEntities()
-            : base("name=GalleryEntities")
+        public GalleryEntities1()
+            : base("name=GalleryEntities1")
         {
         }
     
